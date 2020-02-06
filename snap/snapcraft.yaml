@@ -1,166 +1,167 @@
+---
 name: abstractgames
-version: 20.2.0
+version: "20.2.0"
+summary: "The Ulimate Suite of Strategy, Abstract, and Arcade Games"
+description: "This is a collection of strategy and arcade games which are simple, light, interesting, and modern."
 grade: stable
-
 confinement: strict
 base: core18
-
-summary: Modern games for a new decade.
-description: |
-  The Abstract Team presents you with the Abstract Game Suite...
-  Modern games crafted entirely in Javascript and QtQuick, the portable scripting language. Now on the Snap Store.
-  Thank you, and we hope you enjoy playing these games.
+architectures:
+  - amd64
 
 apps:
-  mines:
-    common-id: org.abstract.mines.desktop
-    command: kf5-launch mines
-    desktop: usr/share/applications/abstractgames/mines.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
-            - opengl
-            # - network
-            # - network-bind
-            - unity7
-            # - pulseaudio
+    chess:
+        command: kf5-launch $SNAP/usr/bin/chess
+        common-id: org.gitlab.abstractgames.chess.desktop
+        desktop: usr/share/applications/chess.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
+            - opengl
+            - unity7
+            - x11
 
-  tictactoe:
-    common-id: org.abstract.tictactoe.desktop
-    command: kf5-launch tictactoe
-    desktop: usr/share/applications/abstractgames/tictactoe.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
-            - opengl
-            # - network
-            # - network-bind
-            - unity7
-            # - pulseaudio
+    mines:
+        command: kf5-launch $SNAP/usr/bin/mines
+        common-id: org.gitlab.abstractgames.mines.desktop
+        desktop: usr/share/applications/mines.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
+            - opengl
+            - unity7
+            - x11
 
-  chess:
-    common-id: org.abstract.chess.desktop
-    command: kf5-launch chess
-    desktop: usr/share/applications/abstractgames/chess.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
-            - opengl
-            # - network
-            # - network-bind
-            - unity7
-            # - pulseaudio
+    tictactoe:
+        command: kf5-launch $SNAP/usr/bin/tictactoe
+        common-id: org.gitlab.abstractgames.tictactoe.desktop
+        desktop: usr/share/applications/tictactoe.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
-
-  samegame:
-    common-id: org.abstract.samegame.desktop
-    command: kf5-launch samegame
-    desktop: usr/share/applications/abstractgames/samegame.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
             - opengl
-            # - network
-            # - network-bind
             - unity7
-            # - pulseaudio
+            - x11
+    samegame:
+        command: kf5-launch $SNAP/usr/bin/samegame
+        common-id: org.gitlab.abstractgames.samegame.desktop
+        desktop: usr/share/applications/samegame.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
-
-  bots:
-    common-id: org.abstract.bots.desktop
-    command: kf5-launch bots
-    desktop: usr/share/applications/abstractgames/bots.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
             - opengl
-            # - network
-            # - network-bind
             - unity7
-            # - pulseaudio
+            - x11
+     jetfighter:
+        command: kf5-launch $SNAP/usr/bin/jetfighter
+        common-id: org.gitlab.abstractgames.jetfighter.desktop
+        desktop: usr/share/applications/jetfighter.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
-
-  jetfighter:
-    common-id: org.abstract.jetfighter.desktop
-    command: kf5-launch jetfighter
-    desktop: usr/share/applications/abstractgames/jetfighter.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
             - opengl
-            # - network
-            # - network-bind
             - unity7
-            # - pulseaudio
+            - x11
+     bots:
+        command: kf5-launch $SNAP/usr/bin/bots
+        common-id: org.gitlab.abstractgames.bots.desktop
+        desktop: usr/share/applications/bots.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
-
-  igo:
-    common-id: org.abstract.igo.desktop
-    command: kf5-launch igo
-    desktop: usr/share/applications/abstractgames/igo.desktop
-    plugs:
-            # - kde-frameworks-5-plug
-            - x11
-            # - home
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
             - opengl
-            # - network
-            # - network-bind
             - unity7
-            # - pulseaudio
+            - x11
+     igo:
+        command: kf5-launch $SNAP/usr/bin/igo
+        common-id: org.gitlab.abstractgames.igo.desktop
+        desktop: usr/share/applications/igo.desktop
+        plugs:
+            - browser-support
             - desktop
             - desktop-legacy
-            - wayland
+            - home
+              # - kde-frameworks-5-plug ???
+            - pulseaudio
+            - network
+            - opengl
+            - unity7
+            - x11
 
 plugs:
     kde-frameworks-5-plug:
         interface: content
-        content: kde-frameworks-5-core18-all
+        content: kde-frameworks-5-core18-all 
         default-provider: kde-frameworks-5-core18
         target: kf5
 
 parts:
-  gamebuild:
-    plugin: cmake
-    source: https://gitlab.com/abstractsoftware/abstract-games.git
+    abstractgamesbuild:
+        plugin: cmake
+        source-type: git
+        source: https://gitlab.com/abstractsoftware/abstractgames.git
+        source-commit: "7e6eb5e45a03cf89fa4c87edc641fe3a56be2615"
 
-    build-snaps:
-      - kde-frameworks-5-core18-sdk/latest/candidate
+        build-packages: 
+            - build-essential
+            - libegl1-mesa-dev
+            - sonnet-plugins
 
-    build-packages:
-      - build-essential
-      - libegl1-mesa-dev
+        build-snaps: 
+            - kde-frameworks-5-core18-sdk/latest/candidate
 
-    override-pull: |
-        snapcraftctl pull
-        sed -i.bak -e 's|Icon=chess|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/chess.svg|g' resource/chess/chess.desktop
-        sed -i.bak -e 's|Icon=samegame|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
-        sed -i.bak -e 's|Icon=mines|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/mines.svg|g' resource/mines/mines.desktop
-        sed -i.bak -e 's|Icon=tictactoe|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/tictactoe.svg|g' resource/tictactoe/tictactoe.desktop
-        sed -i.bak -e 's|Icon=bots|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/bots.svg|g' resource/bots/bots.desktop
-        sed -i.bak -e 's|Icon=jetfighter|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/jetfighter.svg|g' resource/jetfighter/jetfighter.desktop
-        sed -i.bak -e 's|Icon=igo|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/igo.svg|g' resource/jetfighter/igo.desktop
+              #stage-packages:
+              #- flite
+              #- hunspell-en-us
+              #- pandoc
 
+        configflags:
+            - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+            - "-DCMAKE_INSTALL_PREFIX=/usr"
+            - "-DCMAKE_BUILD_TYPE=Release"
+            - "-DENABLE_TESTING=OFF"
+            - "-DBUILD_TESTING=OFF"
+            - "-DKDE_SKIP_TEST_SETTINGS=ON"
 
-  kde-frameworks-5-env:
-    plugin: dump
-    source: https://github.com/apachelogger/kf5-snap-env.git 
+        override-pull: |
+            snapcraftctl pull
+            sed -i.bak -e 's|Icon=chess|Icon=/usr/share/icons/hicolor/scalable/apps/chess.svg|g' resource/chess/chess.desktop
+            sed -i.bak -e 's|Icon=mines|Icon=/usr/share/icons/hicolor/scalable/apps/mines.svg|g' resource/mines/mines.desktop
+            sed -i.bak -e 's|Icon=tictactoe|Icon=/usr/share/icons/hicolor/scalable/apps/tictactoe.svg|g' resource/tictactoe/tictactoe.desktop
+            sed -i.bak -e 's|Icon=samegame|Icon=/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
+            sed -i.bak -e 's|Icon=jetfighter|Icon=/usr/share/icons/hicolor/scalable/apps/jetfighter.svg|g' resource/jetfighter/jetfighter.desktop
+            sed -i.bak -e 's|Icon=igo|Icon=/usr/share/icons/hicolor/scalable/apps/igo.svg|g' resource/igo/igo.desktop
+
+    kde-frameworks-5-env:
+        plugin: dump
+        source: https://github.com/apachelogger/kf5-snap-env.git
