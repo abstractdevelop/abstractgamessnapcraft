@@ -16,43 +16,120 @@ apps:
     common-id: org.abstract.mines.desktop
     command: kf5-launch mines
     desktop: usr/share/applications/abstractgames/mines.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
   tictactoe:
     common-id: org.abstract.tictactoe.desktop
     command: kf5-launch tictactoe
     desktop: usr/share/applications/abstractgames/tictactoe.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
   chess:
     common-id: org.abstract.chess.desktop
     command: kf5-launch chess
     desktop: usr/share/applications/abstractgames/chess.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
   samegame:
     common-id: org.abstract.samegame.desktop
     command: kf5-launch samegame
     desktop: usr/share/applications/abstractgames/samegame.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
   bots:
     common-id: org.abstract.bots.desktop
     command: kf5-launch bots
     desktop: usr/share/applications/abstractgames/bots.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
   jetfighter:
     common-id: org.abstract.jetfighter.desktop
     command: kf5-launch jetfighter
     desktop: usr/share/applications/abstractgames/jetfighter.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
   igo:
     common-id: org.abstract.igo.desktop
     command: kf5-launch igo
     desktop: usr/share/applications/abstractgames/igo.desktop
-    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+    plugs:
+            # - kde-frameworks-5-plug
+            - x11
+            # - home
+            - opengl
+            # - network
+            # - network-bind
+            - unity7
+            # - pulseaudio
+            - desktop
+            - desktop-legacy
+            - wayland
 
 plugs:
     kde-frameworks-5-plug:
