@@ -1,5 +1,5 @@
 name: abstractgames
-version: 20.1.1
+version: 20.2.0
 grade: stable
 
 confinement: strict
@@ -64,16 +64,14 @@ plugs:
 parts:
   gamebuild:
     plugin: cmake
+    source: https://gitlab.com/abstractsoftware/abstract-games.git
+
     build-snaps:
-      - kde-frameworks-5-core18-sdk
-      - kde-frameworks-5-core18
+      - kde-frameworks-5-core18-sdk/latest/candidate
+
     build-packages:
       - build-essential
       - libegl1-mesa-dev
-    #stage-packages:
-    #  - papirus-icon-theme
-
-    source: https://gitlab.com/abstractsoftware/abstract-games.git
 
     override-pull: |
         snapcraftctl pull
