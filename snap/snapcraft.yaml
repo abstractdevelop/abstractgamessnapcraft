@@ -129,13 +129,13 @@ parts:
     abstractgamesbuild:
         plugin: cmake
         source-type: git
-        source: https://gitlab.com/abstractsoftware/abstractgames.git
+        source: https://gitlab.com/abstractsoftware/abstract-games.git
         source-commit: "7e6eb5e45a03cf89fa4c87edc641fe3a56be2615"
 
         build-packages: 
             - build-essential
             - libegl1-mesa-dev
-            - sonnet-plugins
+              #- sonnet-plugins
 
         build-snaps: 
             - kde-frameworks-5-core18-sdk/latest/candidate
