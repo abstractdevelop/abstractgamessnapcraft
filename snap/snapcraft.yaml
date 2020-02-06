@@ -1,0 +1,91 @@
+name: abstractgames
+version: 20.1.1
+grade: stable
+
+confinement: strict
+base: core18
+
+summary: Modern games for a new decade.
+description: |
+  The Abstract Team presents you with the Abstract Game Suite...
+  Modern games crafted entirely in Javascript and QtQuick, the portable scripting language. Now on the Snap Store.
+  Thank you, and we hope you enjoy playing these games.
+
+apps:
+  mines:
+    common-id: org.abstract.mines.desktop
+    command: kf5-launch mines
+    desktop: usr/share/applications/abstractgames/mines.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+  tictactoe:
+    common-id: org.abstract.tictactoe.desktop
+    command: kf5-launch tictactoe
+    desktop: usr/share/applications/abstractgames/tictactoe.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+  chess:
+    common-id: org.abstract.chess.desktop
+    command: kf5-launch chess
+    desktop: usr/share/applications/abstractgames/chess.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+  samegame:
+    common-id: org.abstract.samegame.desktop
+    command: kf5-launch samegame
+    desktop: usr/share/applications/abstractgames/samegame.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+  bots:
+    common-id: org.abstract.bots.desktop
+    command: kf5-launch bots
+    desktop: usr/share/applications/abstractgames/bots.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+  jetfighter:
+    common-id: org.abstract.jetfighter.desktop
+    command: kf5-launch jetfighter
+    desktop: usr/share/applications/abstractgames/jetfighter.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+  igo:
+    common-id: org.abstract.igo.desktop
+    command: kf5-launch igo
+    desktop: usr/share/applications/abstractgames/igo.desktop
+    plugs: [kde-frameworks-5-plug,x11,home,opengl,network,network-bind,unity7,pulseaudio,desktop,desktop-legacy]
+
+plugs:
+    kde-frameworks-5-plug:
+        interface: content
+        content: kde-frameworks-5-core18-all
+        default-provider: kde-frameworks-5-core18
+        target: kf5
+
+parts:
+  gamebuild:
+    plugin: cmake
+    build-snaps:
+      - kde-frameworks-5-core18-sdk
+      - kde-frameworks-5-core18
+    build-packages:
+      - build-essential
+      - libegl1-mesa-dev
+    #stage-packages:
+    #  - papirus-icon-theme
+
+    source: https://gitlab.com/abstractsoftware/abstract-games.git
+
+    override-pull: |
+        snapcraftctl pull
+        sed -i.bak -e 's|Icon=chess|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/chess.svg|g' resource/chess/chess.desktop
+        sed -i.bak -e 's|Icon=samegame|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
+        sed -i.bak -e 's|Icon=mines|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/mines.svg|g' resource/mines/mines.desktop
+        sed -i.bak -e 's|Icon=tictactoe|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/tictactoe.svg|g' resource/tictactoe/tictactoe.desktop
+        sed -i.bak -e 's|Icon=bots|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/bots.svg|g' resource/bots/bots.desktop
+        sed -i.bak -e 's|Icon=jetfighter|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/jetfighter.svg|g' resource/jetfighter/jetfighter.desktop
+        sed -i.bak -e 's|Icon=igo|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/igo.svg|g' resource/jetfighter/igo.desktop
+
+
+  kde-frameworks-5-env:
+    plugin: dump
+    source: https://github.com/apachelogger/kf5-snap-env.git 
