@@ -1,7 +1,7 @@
 ---
 name: abstractgames
-version: "20.2.0"
-summary: "The Ulimate Suite of Strategy, Abstract, and Arcade Games"
+version: "20.2.1"
+summary: "The Ultimate Suite of Strategy, Abstract, and Arcade Games"
 description: "This is a collection of strategy and arcade games which are simple, light, interesting, and modern."
 grade: stable
 confinement: strict
@@ -15,108 +15,115 @@ apps:
         common-id: org.gitlab.abstractgames.chess.desktop
         desktop: usr/share/applications/abstractgames/chess.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
 
     mines:
         command: kf5-launch $SNAP/usr/bin/mines
         common-id: org.gitlab.abstractgames.mines.desktop
         desktop: usr/share/applications/abstractgames/mines.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
 
     tictactoe:
         command: kf5-launch $SNAP/usr/bin/tictactoe
         common-id: org.gitlab.abstractgames.tictactoe.desktop
         desktop: usr/share/applications/abstractgames/tictactoe.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
     samegame:
         command: kf5-launch $SNAP/usr/bin/samegame
         common-id: org.gitlab.abstractgames.samegame.desktop
         desktop: usr/share/applications/abstractgames/samegame.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
     jetfighter:
         command: kf5-launch $SNAP/usr/bin/jetfighter
         common-id: org.gitlab.abstractgames.jetfighter.desktop
         desktop: usr/share/applications/abstractgames/jetfighter.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
     bots:
         command: kf5-launch $SNAP/usr/bin/bots
         common-id: org.gitlab.abstractgames.bots.desktop
         desktop: usr/share/applications/abstractgames/bots.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
     igo:
         command: kf5-launch $SNAP/usr/bin/igo
         common-id: org.gitlab.abstractgames.igo.desktop
         desktop: usr/share/applications/abstractgames/igo.desktop
         plugs:
-            - browser-support
+                #- browser-support
             - desktop
             - desktop-legacy
-            - home
+              #- home
               # - kde-frameworks-5-plug ???
-            - pulseaudio
-            - network
+              #- pulseaudio
+              #- network
             - opengl
             - unity7
             - x11
+            - wayland
 
 plugs:
     kde-frameworks-5-plug:
@@ -130,7 +137,7 @@ parts:
         plugin: cmake
         source-type: git
         source: https://gitlab.com/abstractsoftware/abstract-games.git
-        source-commit: "7e6eb5e45a03cf89fa4c87edc641fe3a56be2615"
+        source-commit: "e47741ce98627e3f646648832d38f4db5caa437c"
 
         build-packages: 
             - build-essential
@@ -145,13 +152,13 @@ parts:
               #- hunspell-en-us
               #- pandoc
 
-        configflags:
-            - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
-            - "-DCMAKE_INSTALL_PREFIX=/usr"
-            - "-DCMAKE_BUILD_TYPE=Release"
-            - "-DENABLE_TESTING=OFF"
-            - "-DBUILD_TESTING=OFF"
-            - "-DKDE_SKIP_TEST_SETTINGS=ON"
+              #configflags:
+                #- "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+                #- "-DCMAKE_INSTALL_PREFIX=/usr"
+                #- "-DCMAKE_BUILD_TYPE=Release"
+              #- "-DENABLE_TESTING=OFF"
+              #- "-DBUILD_TESTING=OFF"
+              #- "-DKDE_SKIP_TEST_SETTINGS=ON"
 
         override-pull: |
             snapcraftctl pull
@@ -160,6 +167,7 @@ parts:
             sed -i.bak -e 's|Icon=tictactoe|Icon=/usr/share/icons/hicolor/scalable/apps/tictactoe.svg|g' resource/tictactoe/tictactoe.desktop
             sed -i.bak -e 's|Icon=samegame|Icon=/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
             sed -i.bak -e 's|Icon=jetfighter|Icon=/usr/share/icons/hicolor/scalable/apps/jetfighter.svg|g' resource/jetfighter/jetfighter.desktop
+            sed -i.bak -e 's|Icon=jetfighter|Icon=/usr/share/icons/hicolor/scalable/apps/bots.svg|g' resource/bots/bots.desktop
             sed -i.bak -e 's|Icon=igo|Icon=/usr/share/icons/hicolor/scalable/apps/igo.svg|g' resource/igo/igo.desktop
 
     kde-frameworks-5-env:
