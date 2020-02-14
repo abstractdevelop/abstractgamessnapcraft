@@ -167,7 +167,7 @@ parts:
             sed -i.bak -e 's|Icon=tictactoe|Icon=/usr/share/icons/hicolor/scalable/apps/tictactoe.svg|g' resource/tictactoe/tictactoe.desktop
             sed -i.bak -e 's|Icon=samegame|Icon=/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
             sed -i.bak -e 's|Icon=jetfighter|Icon=/usr/share/icons/hicolor/scalable/apps/jetfighter.svg|g' resource/jetfighter/jetfighter.desktop
-            sed -i.bak -e 's|Icon=jetfighter|Icon=/usr/share/icons/hicolor/scalable/apps/bots.svg|g' resource/bots/bots.desktop
+            sed -i.bak -e 's|Icon=bots|Icon=/usr/share/icons/hicolor/scalable/apps/bots.svg|g' resource/bots/bots.desktop
             sed -i.bak -e 's|Icon=igo|Icon=/usr/share/icons/hicolor/scalable/apps/igo.svg|g' resource/igo/igo.desktop
 
     kde-frameworks-5-env:
