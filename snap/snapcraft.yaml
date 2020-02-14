@@ -145,7 +145,7 @@ parts:
               #- sonnet-plugins
 
         build-snaps: 
-            - kde-frameworks-5-core18-sdk/latest/candidate
+            - kde-frameworks-5-core18-sdk
 
               #stage-packages:
               #- flite
