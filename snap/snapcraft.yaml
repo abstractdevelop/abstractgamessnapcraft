@@ -147,20 +147,9 @@ parts:
         build-snaps: 
             - kde-frameworks-5-core18-sdk
 
-              #stage-packages:
-              #- flite
-              #- hunspell-en-us
-              #- pandoc
-
-              configflags:
-                      - "-DCMAKE_INSTALL_PREFIX=/usr/bin"
-                      - "-DPLUGIN_INSTALL_DIR=/usr/lib"
-                #- "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
-                #- "-DCMAKE_INSTALL_PREFIX=/usr"
-                #- "-DCMAKE_BUILD_TYPE=Release"
-              #- "-DENABLE_TESTING=OFF"
-              #- "-DBUILD_TESTING=OFF"
-              #- "-DKDE_SKIP_TEST_SETTINGS=ON"
+        configflags:
+            - "-DCMAKE_INSTALL_PREFIX=/usr/bin"
+            - "-DPLUGIN_INSTALL_DIR=/usr/lib"
 
         override-pull: |
             snapcraftctl pull
