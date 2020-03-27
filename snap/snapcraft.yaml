@@ -1,6 +1,6 @@
 ---
 name: abstractgames
-version: "20.2.3"
+version: "20.2.4"
 summary: "The Ultimate Suite of Strategy, Abstract, and Arcade Games"
 description: "This is a collection of strategy and arcade games which are simple, light, interesting, and modern."
 grade: stable
@@ -152,7 +152,9 @@ parts:
               #- hunspell-en-us
               #- pandoc
 
-              #configflags:
+              configflags:
+                      -DCMAKE_INSTALL_PREFIX=/usr/bin
+                      -DPLUGIN_INSTALL_DIR=/usr/lib
                 #- "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
                 #- "-DCMAKE_INSTALL_PREFIX=/usr"
                 #- "-DCMAKE_BUILD_TYPE=Release"
