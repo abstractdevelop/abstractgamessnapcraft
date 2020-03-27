@@ -153,8 +153,8 @@ parts:
               #- pandoc
 
               configflags:
-                      -DCMAKE_INSTALL_PREFIX=/usr/bin
-                      -DPLUGIN_INSTALL_DIR=/usr/lib
+                      "-DCMAKE_INSTALL_PREFIX=/usr/bin"
+                      "-DPLUGIN_INSTALL_DIR=/usr/lib"
                 #- "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
                 #- "-DCMAKE_INSTALL_PREFIX=/usr"
                 #- "-DCMAKE_BUILD_TYPE=Release"
