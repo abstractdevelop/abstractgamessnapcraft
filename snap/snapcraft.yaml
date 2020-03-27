@@ -137,7 +137,7 @@ parts:
         plugin: cmake
         source-type: git
         source: https://gitlab.com/abstractsoftware/abstract-games.git
-        source-commit: "29f29a1914f552fe85b17bdeb404dae960b6218a"
+        source-commit: "e45a57b4383660e7318179dfcc6620db472b3878"
 
         build-packages: 
             - build-essential
