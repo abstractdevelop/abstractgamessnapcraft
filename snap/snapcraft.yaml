@@ -148,8 +148,8 @@ parts:
             - kde-frameworks-5-core18-sdk
 
         configflags:
-            - "-DCMAKE_INSTALL_PREFIX=/usr/bin"
-            - "-DPLUGIN_INSTALL_DIR=/usr/lib"
+            - "-DCMAKE_INSTALL_PREFIX=/usr"
+            - "-DPLUGIN_INSTALL_DIR=/usr"
 
         override-pull: |
             snapcraftctl pull
