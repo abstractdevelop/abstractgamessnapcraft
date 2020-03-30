@@ -13,7 +13,7 @@ apps:
     chess:
         command: kf5-launch $SNAP/usr/bin/chess
         common-id: org.gitlab.abstractgames.chess.desktop
-        desktop: /usr/share/applications/abstractgames/chess.desktop
+        desktop: usr/share/applications/abstractgames/chess.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -30,7 +30,7 @@ apps:
     mines:
         command: kf5-launch $SNAP/usr/bin/mines
         common-id: org.gitlab.abstractgames.mines.desktop
-        desktop: /usr/share/applications/abstractgames/mines.desktop
+        desktop: usr/share/applications/abstractgames/mines.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -47,7 +47,7 @@ apps:
     tictactoe:
         command: kf5-launch $SNAP/usr/bin/tictactoe
         common-id: org.gitlab.abstractgames.tictactoe.desktop
-        desktop: /usr/share/applications/abstractgames/tictactoe.desktop
+        desktop: usr/share/applications/abstractgames/tictactoe.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -63,7 +63,7 @@ apps:
     samegame:
         command: kf5-launch $SNAP/usr/bin/samegame
         common-id: org.gitlab.abstractgames.samegame.desktop
-        desktop: /usr/share/applications/abstractgames/samegame.desktop
+        desktop: usr/share/applications/abstractgames/samegame.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -79,7 +79,7 @@ apps:
     jetfighter:
         command: kf5-launch $SNAP/usr/bin/jetfighter
         common-id: org.gitlab.abstractgames.jetfighter.desktop
-        desktop: /usr/share/applications/abstractgames/jetfighter.desktop
+        desktop: usr/share/applications/abstractgames/jetfighter.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -95,7 +95,7 @@ apps:
     bots:
         command: kf5-launch $SNAP/usr/bin/bots
         common-id: org.gitlab.abstractgames.bots.desktop
-        desktop: /usr/share/applications/abstractgames/bots.desktop
+        desktop: usr/share/applications/abstractgames/bots.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -111,7 +111,7 @@ apps:
     igo:
         command: kf5-launch $SNAP/usr/bin/igo
         common-id: org.gitlab.abstractgames.igo.desktop
-        desktop: /usr/share/applications/abstractgames/igo.desktop
+        desktop: usr/share/applications/abstractgames/igo.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -148,8 +148,13 @@ parts:
             - kde-frameworks-5-core18-sdk
 
         configflags:
+            - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
             - "-DCMAKE_INSTALL_PREFIX=/usr"
             - "-DPLUGIN_INSTALL_DIR=/usr"
+            - "-DCMAKE_BUILD_TYPE=Release"
+            - "-DENABLE_TESTING=OFF"
+            - "-DBUILD_TESTING=OFF"
+            - "-DKDE_SKIP_TEST_SETTINGS=ON"
 
         override-pull: |
             snapcraftctl pull
