@@ -155,6 +155,10 @@ parts:
             - "-DENABLE_TESTING=OFF"
             - "-DBUILD_TESTING=OFF"
             - "-DKDE_SKIP_TEST_SETTINGS=ON"
+            - "-DKDE_INSTALL_ICONDIR=/usr/share/icons"
+            - "-DKDE_INSTALL_TARGETS_DEFAULT_ARGS=/usr/bin"
+            - "-DXDG_APPS_INSTALL_DIR=/usr/share/applications"
+            - "-DKDE_INSTALL_LIBDIR=/usr/lib"
 
         override-pull: |
             snapcraftctl pull
