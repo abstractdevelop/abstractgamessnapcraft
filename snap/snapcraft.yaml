@@ -148,16 +148,12 @@ parts:
             - kde-frameworks-5-core18-sdk
 
         configflags:
-            - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
-            - "-DCMAKE_INSTALL_PREFIX=/usr"
-            - "-DPLUGIN_INSTALL_DIR=/usr"
-            - "-DCMAKE_BUILD_TYPE=Release"
-            - "-DENABLE_TESTING=OFF"
-            - "-DBUILD_TESTING=OFF"
-            - "-DKDE_SKIP_TEST_SETTINGS=ON"
-            - "-DKDE_INSTALL_ICONDIR=/usr/share/icons"
-            - "-DKDE_INSTALL_TARGETS_DEFAULT_ARGS=/usr/bin"
-            - "-DXDG_APPS_INSTALL_DIR=/usr/share/applications"
+            - "-DCMAKE_INSTALL_PREFIX=/usr/"
+            - "-DPLUGIN_INSTALL_DIR=/usr/"
+            - "-DKDE_INSTALL_TARGETS_DEFAULT_ARGS=/usr/bin/"
+            - "-DXDG_APPS_INSTALL_DIR=/usr/share/applications/"
+            - "-DKDE_INSTALL_ICONDIR=/usr/share/icons/"
+            - "-DKDE_INSTALL_DATAROOTDIR=/usr/share/"
             - "-DKDE_INSTALL_LIBDIR=/usr/lib"
 
         override-pull: |
