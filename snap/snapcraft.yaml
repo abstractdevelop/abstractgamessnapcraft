@@ -13,7 +13,7 @@ apps:
     chess:
         command: kf5-launch $SNAP/usr/bin/chess
         common-id: org.gitlab.abstractgames.chess.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/chess.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/chess.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -30,7 +30,7 @@ apps:
     mines:
         command: kf5-launch $SNAP/usr/bin/mines
         common-id: org.gitlab.abstractgames.mines.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/mines.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/mines.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -47,7 +47,7 @@ apps:
     tictactoe:
         command: kf5-launch $SNAP/usr/bin/tictactoe
         common-id: org.gitlab.abstractgames.tictactoe.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/tictactoe.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/tictactoe.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -63,7 +63,7 @@ apps:
     samegame:
         command: kf5-launch $SNAP/usr/bin/samegame
         common-id: org.gitlab.abstractgames.samegame.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/samegame.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/samegame.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -79,7 +79,7 @@ apps:
     jetfighter:
         command: kf5-launch $SNAP/usr/bin/jetfighter
         common-id: org.gitlab.abstractgames.jetfighter.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/jetfighter.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/jetfighter.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -95,7 +95,7 @@ apps:
     bots:
         command: kf5-launch $SNAP/usr/bin/bots
         common-id: org.gitlab.abstractgames.bots.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/bots.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/bots.desktop
         plugs:
                 #- browser-support
             - desktop
@@ -111,7 +111,7 @@ apps:
     igo:
         command: kf5-launch $SNAP/usr/bin/igo
         common-id: org.gitlab.abstractgames.igo.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames/igo.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/igo.desktop
         plugs:
                 #- browser-support
             - desktop
