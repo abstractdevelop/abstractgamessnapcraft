@@ -157,7 +157,7 @@ parts:
             - "-DKDE_INSTALL_DATAROOTDIR=/usr/share/"
             - "-DKDE_INSTALL_LIBDIR=/usr/lib/"
             - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/"
-            - "-DKDE_INSTALL_APPDIR=/usr/share/application/"
+            - "-DKDE_INSTALL_APPDIR=/usr/share/applications/"
             - "-DKDE_INSTALL_BINDIR=/usr/bin/"
 
         override-pull: |
