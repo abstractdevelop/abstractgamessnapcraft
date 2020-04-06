@@ -1,6 +1,6 @@
 ---
 name: abstractgames
-version: "20.4.0"
+version: "20.4.1"
 summary: "The Ultimate Suite of Strategy, Abstract, and Arcade Games"
 description: "This is a collection of strategy and arcade games which are simple, light, interesting, and modern."
 grade: stable
@@ -137,7 +137,7 @@ parts:
         plugin: cmake
         source-type: git
         source: https://gitlab.com/abstractsoftware/abstract-games.git
-        source-commit: "e45a57b4383660e7318179dfcc6620db472b3878"
+        source-commit: "e9c8da21fd5f8c3872f940f833b393ab904a6c6f"
 
         build-packages: 
             - build-essential
