@@ -15,13 +15,9 @@ apps:
         common-id: org.gitlab.abstractgames.chess.desktop
         desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/chess.desktop
         plugs:
-                #- browser-support
+            - browser-support
             - desktop
             - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
             - opengl
             - unity7
             - x11
@@ -32,13 +28,8 @@ apps:
         common-id: org.gitlab.abstractgames.mines.desktop
         desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/mines.desktop
         plugs:
-                #- browser-support
             - desktop
             - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
             - opengl
             - unity7
             - x11
@@ -49,45 +40,30 @@ apps:
         common-id: org.gitlab.abstractgames.tictactoe.desktop
         desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/tictactoe.desktop
         plugs:
-                #- browser-support
             - desktop
             - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
             - opengl
             - unity7
             - x11
             - wayland
-    samegame:
-        command: kf5-launch $SNAP/usr/bin/samegame
-        common-id: org.gitlab.abstractgames.samegame.desktop
-        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/samegame.desktop
-        plugs:
-                #- browser-support
-            - desktop
-            - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
-            - opengl
-            - unity7
-            - x11
-            - wayland
+              #samegame:
+              #command: kf5-launch $SNAP/usr/bin/samegame
+              #common-id: org.gitlab.abstractgames.samegame.desktop
+              #desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/samegame.desktop
+              #plugs:
+              #- desktop
+              #- desktop-legacy
+              #- opengl
+              #- unity7
+              #- x11
+              #- wayland
     jetfighter:
         command: kf5-launch $SNAP/usr/bin/jetfighter
         common-id: org.gitlab.abstractgames.jetfighter.desktop
         desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/jetfighter.desktop
         plugs:
-                #- browser-support
             - desktop
             - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
             - opengl
             - unity7
             - x11
@@ -97,13 +73,8 @@ apps:
         common-id: org.gitlab.abstractgames.bots.desktop
         desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/bots.desktop
         plugs:
-                #- browser-support
             - desktop
             - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
             - opengl
             - unity7
             - x11
@@ -113,17 +84,25 @@ apps:
         common-id: org.gitlab.abstractgames.igo.desktop
         desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/igo.desktop
         plugs:
-                #- browser-support
             - desktop
             - desktop-legacy
-              #- home
-              # - kde-frameworks-5-plug ???
-              #- pulseaudio
-              #- network
             - opengl
             - unity7
             - x11
             - wayland
+
+    abstractgames:
+        command: kf5-launch $SNAP/usr/bin/abstractgames
+        common-id: org.gitlab.abstractgames.abstractgames.desktop
+        desktop: /build/abstractgames/parts/abstractgamesbuild/install/usr/share/applications/abstractgames.desktop
+        plugs:
+            - browser-support
+            - desktop
+            - desktop-legacy
+            - opengl
+            - unity7
+            - x11
+            - wayland    
 
 plugs:
     kde-frameworks-5-plug:
@@ -137,12 +116,10 @@ parts:
         plugin: cmake
         source-type: git
         source: https://gitlab.com/abstractsoftware/abstract-games.git
-        source-commit: "e9c8da21fd5f8c3872f940f833b393ab904a6c6f"
 
         build-packages: 
             - build-essential
             - libegl1-mesa-dev
-              #- sonnet-plugins
 
         build-snaps: 
             - kde-frameworks-5-core18-sdk
@@ -165,10 +142,12 @@ parts:
             sed -i.bak -e 's|Icon=chess|Icon=/usr/share/icons/hicolor/scalable/apps/chess.svg|g' resource/chess/chess.desktop
             sed -i.bak -e 's|Icon=mines|Icon=/usr/share/icons/hicolor/scalable/apps/mines.svg|g' resource/mines/mines.desktop
             sed -i.bak -e 's|Icon=tictactoe|Icon=/usr/share/icons/hicolor/scalable/apps/tictactoe.svg|g' resource/tictactoe/tictactoe.desktop
-            sed -i.bak -e 's|Icon=samegame|Icon=/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
+            #sed -i.bak -e 's|Icon=samegame|Icon=/usr/share/icons/hicolor/scalable/apps/samegame.svg|g' resource/samegame/samegame.desktop
             sed -i.bak -e 's|Icon=jetfighter|Icon=/usr/share/icons/hicolor/scalable/apps/jetfighter.svg|g' resource/jetfighter/jetfighter.desktop
             sed -i.bak -e 's|Icon=bots|Icon=/usr/share/icons/hicolor/scalable/apps/bots.svg|g' resource/bots/bots.desktop
             sed -i.bak -e 's|Icon=igo|Icon=/usr/share/icons/hicolor/scalable/apps/igo.svg|g' resource/igo/igo.desktop
+            #sed -i.bak -e 's|Icon=frogger|Icon=/usr/share/icons/hicolor/scalable/apps/frogger.svg|g' resource/frogger/frogger.desktop
+            sed -i.bak -e 's|Icon=abstractgames|Icon=/usr/share/icons/hicolor/scalable/apps/abstractgames.svg|g' resource/abstractgames/abstractgames.desktop
 
     kde-frameworks-5-env:
         plugin: dump
